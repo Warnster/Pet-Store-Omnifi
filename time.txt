@@ -1,0 +1,1 @@
+50 mins, basic framework and packages. Initial restful request to get a single pet but no db connected
