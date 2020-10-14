@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "0aa3da7e-afcd-45f0-b11b-3e199c02ec34",
+		"name": "Pet Store API",
+		"description": "Pet store api collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get A Pet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1081/api/pet/12",
+					"host": [
+						"localhost"
+					],
+					"port": "1081",
+					"path": [
+						"api",
+						"pet",
+						"12"
+					]
+				},
+				"description": "gets a single pet by ID"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

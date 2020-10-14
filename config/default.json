@@ -1,0 +1,9 @@
+{
+    "label": "default",
+    "server": {
+        "port": 1081
+    },
+    "mongodb": {
+        "host": "mongo-db-host"
+    }
+}
