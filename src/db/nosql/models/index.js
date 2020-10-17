@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 import config from 'config';
 
 export const mongoInit = () => {
-    const connectionString = `mongodb://${config.get('mongodb.host')}:${process.env.MONGODB_KEY}@${config.get('mongodb.host')}.hostname:10255/?ssl=true&appName=@${config.get('mongodb.host')}@`;
+
+    const connectionString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${config.get('mongodb.host')}/petstore?retryWrites=true&w=majority`;
 
     mongoose.connect(connectionString, { 
         useNewUrlParser: true,

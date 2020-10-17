@@ -4,6 +4,6 @@
         "port": 1081
     },
     "mongodb": {
-        "host": "mongo-db-host"
+        "host": "cluster0.sirpt.mongodb.net"
     }
 }

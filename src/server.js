@@ -1,5 +1,5 @@
-//import * as dotenv from 'dotenv';
-//dotenv.config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 import app from "./app.js";
 import { mongoInit } from './db/nosql/models/index.js';
