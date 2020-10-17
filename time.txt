@@ -1,2 +1,3 @@
 50 mins, basic framework and packages. Initial restful request to get a single pet but no db connected
 25 mins, setup mongo database and added connection details
+50 mins, added get, create and getall endpoints and logic
