@@ -3,3 +3,4 @@
 50 mins, added get, create and getall endpoints and logic
 40 mins, added update and delete endpoints. added validation checks
 5 mins, returned total rows for pagination
+22 mins, tidy up and bug fixing

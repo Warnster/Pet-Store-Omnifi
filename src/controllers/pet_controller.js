@@ -1,6 +1,6 @@
 import * as petService from '../services/pet_service.js';
 import {ApiResponse, ApiResponseStatus} from '../util/api_response.js'
-import { petCreateUpdateSchema } from '../validation_schemas/pet_validation_schema.js';
+import { petCreateUpdateSchema, petFilterSchema } from '../validation_schemas/pet_validation_schema.js';
 
 export const getPet = async (req, res) => {
     const petID = req.params.id;
@@ -64,9 +64,22 @@ export const getPets = async (req, res) => {
     const limit = Number(req.query.limit);
     delete filters.limit;
     delete filters.offset;
-    //todo add filter validation
     try {
+        await petFilterSchema.validateAsync(filters);
+    } catch (err) {
+        const errMsg = `Invalid request: ${err.message}`;
+        console.warn(errMsg, err);
+        return res.status(400).json(new ApiResponse({
+            status: ApiResponse.FAIL,
+            errors: [errMsg],
+            message: 'validation error'
+        }));
+    }
 
+    try {
+        if(!filters.isDeleted) {
+            filters.isDeleted = 0;
+        }
         const {rows, count} = await petService.getPets(filters, offset, limit);
 
         return res.status(200).json(new ApiResponse({
@@ -87,7 +100,7 @@ export const getPets = async (req, res) => {
 
 export const updatePet = async (req, res) => {
     const petID = req.params.id;
-    const petData = req.bodhy;
+    const petData = req.body;
 
     try {
         await petCreateUpdateSchema.validateAsync(petData);

@@ -8,6 +8,10 @@ const PetSchema = new Schema({
        type: String,
        required: true,
    },
+   nickNames: [{
+    type: String,
+    required: true
+    }],
    weight: {
        type: Number,
        required: true
@@ -19,6 +23,14 @@ const PetSchema = new Schema({
    species: {
        type: String,
        required: true
+   },
+   dob: {
+       type: Date,
+       required: true,
+   },
+   breed: {
+       type: String,
+       required: true,
    },
    isDeleted: {
        type: Boolean,
