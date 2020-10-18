@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:1081/api/pet/12",
+					"raw": "localhost:1081/api/pet/5f8ad8ffdfd0bf7bdc12b7d3",
 					"host": [
 						"localhost"
 					],
@@ -20,10 +20,197 @@
 					"path": [
 						"api",
 						"pet",
-						"12"
+						"5f8ad8ffdfd0bf7bdc12b7d3"
 					]
 				},
 				"description": "gets a single pet by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Jerry",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10.99",
+							"type": "text"
+						},
+						{
+							"key": "species",
+							"value": "mouse",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "brown",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "10-08-2020",
+							"type": "text"
+						},
+						{
+							"key": "nickNames",
+							"value": "micky",
+							"type": "text"
+						},
+						{
+							"key": "nickNames",
+							"value": "nilly",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:1081/api/pet",
+					"host": [
+						"localhost"
+					],
+					"port": "1081",
+					"path": [
+						"api",
+						"pet"
+					]
+				},
+				"description": "Creates a Pet"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1081/api/pet?offset=0&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "1081",
+					"path": [
+						"api",
+						"pet"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "species",
+							"value": "dog",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Gets all pets with filtering and pagination "
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Jerry",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "species",
+							"value": "mouse",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "brown",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "10-08-2020",
+							"type": "text"
+						},
+						{
+							"key": "nickNames",
+							"value": "mocky",
+							"type": "text"
+						},
+						{
+							"key": "nickNames",
+							"value": "nilly",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:1081/api/pet/5f8ca943f8fe656e28f5726c",
+					"host": [
+						"localhost"
+					],
+					"port": "1081",
+					"path": [
+						"api",
+						"pet",
+						"5f8ca943f8fe656e28f5726c"
+					]
+				},
+				"description": "updates a pet by the identifier"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a pet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:1081/api/pet/5f8ca943f8fe656e28f5726c",
+					"host": [
+						"localhost"
+					],
+					"port": "1081",
+					"path": [
+						"api",
+						"pet",
+						"5f8ca943f8fe656e28f5726c"
+					]
+				},
+				"description": "Deletes a pet with the identifier"
 			},
 			"response": []
 		}
