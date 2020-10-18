@@ -5,9 +5,13 @@ export const getPetById = async(petID) => {
 }
 
 export const getPets = async(filters, offset, limit) => {
-    return PetModel.find({
+    const rows = await PetModel.find({
         ...filters,
     }).skip(offset).limit(limit);
+    const count = await PetModel.find({
+        ...filters,
+    }).count();
+    return {rows, count};
 }
 
 export const createPet = async(petData)  => {

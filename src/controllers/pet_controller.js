@@ -67,10 +67,11 @@ export const getPets = async (req, res) => {
     //todo add filter validation
     try {
 
-        const data = await petService.getPets(filters, offset, limit);
+        const {rows, count} = await petService.getPets(filters, offset, limit);
 
         return res.status(200).json(new ApiResponse({
-            data,
+            data: rows,
+            totalFilteredRows: count,
             status: ApiResponseStatus.SUCCESS,
             message: 'getPet success'
         }));
@@ -87,7 +88,7 @@ export const getPets = async (req, res) => {
 export const updatePet = async (req, res) => {
     const petID = req.params.id;
     const petData = req.bodhy;
-    
+
     try {
         await petCreateUpdateSchema.validateAsync(petData);
     } catch (err) {
