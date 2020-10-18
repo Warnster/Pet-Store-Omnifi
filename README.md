@@ -41,4 +41,6 @@ Adhoc utilities, in this case there is an api response class that is used to sta
 This app does all the that is required on the specification except for adding siblings. Due to lack of time i didn't add this.
 Also it is worth noting that the Appilication doesn't hard delete from the database, it only soft deletes by setting a isDeleted key = true;
 
+time.txt file contains a breakdown of the time spent on each task roughly
+
 
