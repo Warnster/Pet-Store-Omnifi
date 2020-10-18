@@ -16,5 +16,21 @@ export const createPet = async(petData)  => {
     pet.weight = petData.weight;
     pet.price = petData.price;
     pet.species = petData.species;
+    pet.isDeleted = 0;
     return pet.save();
+}
+
+export const updatePet = async(petID, petData) => {
+    let pet = await PetModel.findById(petID);
+    pet.firstName = petData.firstName;
+    pet.weight = petData.weight;
+    pet.price = petData.price;
+    pet.species = petData.species;
+    return pet.update()
+}
+
+export const deletePet = async(petID) => {
+    let pet = await PetModel.findById(petID);
+    pet.isDeleted = 1;
+    return pet.update()
 }

@@ -19,6 +19,10 @@ const PetSchema = new Schema({
    species: {
        type: String,
        required: true
+   },
+   isDeleted: {
+       type: Boolean,
+       required: false
    }
 }, {
     timestamps: true,
